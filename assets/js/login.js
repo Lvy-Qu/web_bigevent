@@ -45,7 +45,7 @@ $(function () {
                 password: $('#form_reg [name=password]').val()
             },
             success: function (res) {
-                if (res.status != 0) {
+                if (res.status !== 0) {
                     // console.log(res);
                     return layer.msg(res.message);
                 }
@@ -68,7 +68,7 @@ $(function () {
             url: '/api/login',
             data: $(this).serialize(),
             success: function (res) {
-                if (res.status != 0) {
+                if (res.status !== 0) {
                     return layer.msg('登陆失败！')
                 }
                 layer.msg('登陆成功')

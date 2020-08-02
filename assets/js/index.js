@@ -27,7 +27,7 @@ function getUserInfo() {
         success: function (res) {
             // console.log(res);
             // 判断用户获取信息是否成功
-            if (res.status != 0) {
+            if (res.status !== 0) {
                 return layui.layer.msg(res.message)
             }
             // 调用renderAvatar() 渲染用户的头像
@@ -50,7 +50,7 @@ function renderAvatar(user) {
     var name = user.nickname || user.username;
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name)
     // 按需求渲染用户头像
-    if (user.user_pic != null) {
+    if (user.user_pic !== null) {
         // 渲染图片头像
         $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
